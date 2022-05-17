@@ -1,0 +1,27 @@
+﻿
+
+@{
+    ViewBag.Title = "friends";
+}
+
+
+<div style="margin-top:100px;"></div>
+
+
+<div style="">
+    <center>
+        @{foreach (var item in Model)
+            {
+                <div style="padding:20px; margin:20px; background-color:antiquewhite">
+                    <img src="@item.Friend.Photo" />
+
+                    <h3>@item.Friend.FName @item.Friend.LName</h3>
+                    <a href="ShowFriend/@item.Id" class="btn-success " style="padding:10px;">
+                        Show Profile
+                    </a>
+                </div>
+            }
+        }
+    </center>
+</div>
+

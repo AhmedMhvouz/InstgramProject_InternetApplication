@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Signup";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+<body >
+    <center style="margin-top: 100px; background-color: antiquewhite; padding: 20px;">
+        <h1>Sign Up</h1>
+        <form method="post" action="/Home/Signup" enctype="multipart/form-data" style="padding: 30px;">
+            <div class="login-wrap">
+                <div class="login-html">
+
+                    <div class="login-form">
+                        <div class="sign-up-htm">
+
+                            <div class="center">
+                                <div class="group">
+                                    <label for="fname">Firstname</label><br />
+                                    <input id="fname" type="text" class="input" name="Fname" required>
+                                </div><br />
+                                <div class="group">
+                                    <label for="lname">Lastname</label><br />
+                                    <input id="lname" type="text" class="input" name="Lname" required>
+                                </div><br />
+                                <div class="group">
+                                    <label for="num">PhoneNumber</label><br />
+                                    <input id="num" type="text" class="input" name="Phone" required>
+                                </div><br />
+                                <div class="group">
+                                    <label for="user">Username</label><br />
+                                    <input id="user" type="text" class="input" name="username" required>
+                                </div><br />
+                                <div class="group">
+                                    <label for="pass">Password</label><br />
+                                    <input id="pass" type="password" class="input" data-type="password" name="password" required>
+                                </div><br />
+                                <div class="group">
+                                    <label for="pass">Repeat Password</label><br />
+                                    <input id="pass" type="password" class="input" data-type="password" name="repassword" required>
+                                </div><br />
+                                <div class="group">
+                                    <label for="pass">Email Address</label><br />
+                                    <input id="pass" type="email" class="input" name="email" required>
+                                </div><br />
+                                <div class="upload">
+                                    <div class="fileUpload btn ">
+                                        <input id="uploadBtn" type="file" class="upload" name="photo" required />
+                                    </div><br />
+                                </div>
+                                <div class="group">
+                                    <input type="submit" class="button btn-danger" style="padding:10px;" " value="Sign Up">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </center>
+</body>
+</html>

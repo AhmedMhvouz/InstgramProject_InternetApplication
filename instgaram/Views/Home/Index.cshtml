@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Signin</title>
+</head>
+
+<body>
+    
+    <center style="margin-top: 100px; background-color: antiquewhite; padding: 20px;">
+        <h1>Login</h1>
+        <form method="post" action="/Home/index" style="padding: 100px;">
+            <div class="login-wrap">
+                <div class="login-html">
+
+                    <div class="login-form">
+                        <div class="sign-in-htm">
+                            <div class="center">
+                                <div class="group">
+                                    <label for="user">Username</label><br />
+                                    <input id="user" type="text" class="input" name="username" required>
+                                </div>
+                                <div class="group">
+                                    <label for="pass">Password</label><br />
+                                    <input id="pass" type="password" class="input" data-type="password" name="password" required>
+                                </div><br />
+                                <div class="group">
+                                    <input type="submit" class="button btn-danger" style="padding:10px;" value="Sign In" name="send" required>
+                                </div><br />
+                                <div class="group">
+                                    <a href="/Home/Signup"><input id="tab-2" class="button btn-danger sign-up" style="padding:10px;" type="button" name="tab"  value="Sign up"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </center>
+</body>
+</html>
+

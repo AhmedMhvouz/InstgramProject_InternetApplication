@@ -1,0 +1,18 @@
+﻿@model IList<instgaram.Models.friend_request>
+
+@{
+    ViewBag.Title = "my_requests";
+}
+
+<div style="margin-top:100px;"></div>
+@{ 
+    foreach(var item in Model)
+    {   
+    <div style="margin:30px; padding:20px; background-color:antiquewhite;">
+        <img src="@item.receiver.Photo" height="100px" />
+        <h3>@item.receiver.Username</h3>
+        <a href="/profile/cancel/@item.receiver.Id" style="background-color: red;color: white;padding: 10px 10px;border-radius: 12px;text-align: center;text-decoration: none;display: inline-block;">cancel</a>
+    </div>
+    }
+}
+

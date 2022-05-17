@@ -1,0 +1,77 @@
+﻿@model instgaram.Models.User
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+  
+</head>
+<body>
+    <div style="margin-top:100px;"></div>
+
+    <center style="padding:20px; margin:20px; background-color:antiquewhite">
+        <div class="all">
+            <div>
+
+                <img src="@Model.Photo" />
+            </div>
+
+            <div>
+                <br />
+                <br />
+                <br />
+
+                <h3>@Model.FName @Model.LName</h3>
+                <div class="button btn-danger " style="padding:10px; width:90px;">
+                    <a href="/Profile/addpost" style="color:white">
+                        <div>Add Post</div>
+                    </a>
+                </div><br />
+                <div class="button btn-danger " style="padding:10px; width:90px;">
+                    <a href="/Profile/Edit" style="color:white">
+                        <div>Edit Profile</div>
+                    </a>
+                </div>
+                <div class="button btn-danger " style="padding:10px; width:90px; margin-top:10px;">
+                    <a href="../Home/Index" style="color:white">Logout @Model.FName</a>
+
+                </div>
+
+                </div>
+            </div>
+    </center>
+
+    @{foreach (var item in Model.posts)
+        {
+            <div style="padding:20px; margin:20px; background-color:antiquewhite">
+                <center>
+                    <img src="@item.photo" />
+                </center>
+                <br />
+                @{foreach (var i in item.Comments)
+                    {
+                        <h3 class="comm">@i.commenttext</h3>
+                    }
+                }
+                <br />
+                <center>
+                    <input type="text" id="@item.Id" /><br /><br />
+                    <input type="button" class="button btn-danger sign-up" style="padding:10px;" onclick="sendcomment('@item.Id','@Session["Userid"]')" value="send" class="inputsubmit" />
+                    <br />
+                    <h4>@item.PostLike likes</h4>
+                    <h4>
+                        @Html.ActionLink("Like", "Like", new { id = item.Id }) &emsp;
+                        @Html.ActionLink("DisLike", "DisLike", new { id = item.Id })
+                    </h4>
+                </center>
+            </div>
+        }
+    }
+
+</body>
+</html>
+
+
+<script src="~/Scripts/Comment.js"></script>

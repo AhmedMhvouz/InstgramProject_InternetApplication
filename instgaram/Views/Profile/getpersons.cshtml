@@ -1,0 +1,22 @@
+﻿@model IList<instgaram.Models.User>
+
+@{
+    ViewBag.Title = "getpersons";
+}
+
+<div style="margin-top:100px; ">
+@{
+
+    
+        foreach (var item in Model){
+        <div style="margin-top:20px; background-color:antiquewhite; padding:30px;">
+            <img src="@item.Photo" />
+            <h3>@item.Username</h3>
+        </div>
+
+
+        }
+   
+}
+
+</div>

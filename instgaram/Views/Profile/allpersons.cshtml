@@ -1,0 +1,26 @@
+﻿@model IList<instgaram.Models.User>
+
+@{
+    ViewBag.Title = "allpersons";
+}
+
+<div style="margin-top:100px;"></div>
+
+@{
+    foreach (var item in Model)
+    {
+        <center>
+        <div style="padding:20px; background-color:antiquewhite; margin:20px;">
+            <center>
+                <img src="@item.Photo" alt="Avatar" style="width:50%; height:150px;">
+                <div class="container">
+                    <h3>@item.Username</h3>
+                    <a href="/Profile/addfriend/@item.Id" style="background-color: cornflowerblue;color: white;padding: 10px 10px;border-radius: 12px;text-align: center;text-decoration: none;display: inline-block;">Add friend</a>
+                </div>
+
+            </center>
+        </div>
+        </center>
+
+    }
+}
