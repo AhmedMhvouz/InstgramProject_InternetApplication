@@ -1,0 +1,29 @@
+
+
+using System.IO;
+______________________________________________________________________________________
+
+
+using System.Data.Entity;
+______________________________________________________________________________________
+
+Install-Package EntityFramework
+
+enable-migrations
+
+add-migration
+
+update-database
+______________________________________________________________________________________
+
+HttpPostedFileBase postedFile = Request.Files["photo"];
+            string path = Server.MapPath("~/Uploads/");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            postedFile.SaveAs(path + Path.GetFileName(postedFile.FileName));
+
+
+------------------------------------------------------------------------------------------
+enctype = "multipart/form-data"
